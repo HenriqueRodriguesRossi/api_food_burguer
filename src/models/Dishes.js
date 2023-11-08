@@ -17,6 +17,11 @@ const DishesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    numero_de_pedidos:{
+        type: Number,
+        required: false,
+        default: 0
+    },
     criado_em:{
         type: Date,
         default: new Date()
