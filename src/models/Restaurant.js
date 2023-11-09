@@ -48,3 +48,5 @@ const RestaurantSchema = new mongoose.Schema({
         default: new Date()
     }
 })
+
+module.exports = mongoose.model("Restaurante", RestaurantSchema)

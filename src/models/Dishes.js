@@ -25,7 +25,11 @@ const DishesSchema = new mongoose.Schema({
     criado_em:{
         type: Date,
         default: new Date()
-    }
+    },
+    restaurante_id: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Restaurante"
+    }],
 })
 
-module.exports = mongoose.model("Dishes", DishesSchema)
+module.exports = mongoose.model("Dishe", DishesSchema)

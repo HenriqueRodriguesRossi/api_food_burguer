@@ -9,7 +9,7 @@ const RequestSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    id_comida:{
+    id_prato:{
         type: String,
         required: true
     },
@@ -24,7 +24,19 @@ const RequestSchema = new mongoose.Schema({
     criado_em:{
         type: Date,
         default: new Date()
-    }
+    },
+    id_restaurante: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Restaurante"
+    }],
+    usuario_id:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
+    id_prato:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Dishe"
+    }]
 })
 
 module.exports = mongoose.model("Request", RequestSchema)
