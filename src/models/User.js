@@ -1,16 +1,16 @@
 const mongoose = require("mongoose")
 
 const UserSchema = new mongoose.Schema({
-    nome: {
+    nome_completo: {
         type: String,
         required: true
     },
-    document:{
+    cpf:{
         type: String,
         required: true,
         unique: true
     },
-    date_of_birth:{
+    data_de_aniversario:{
         type: Date,
         required: true
     },
@@ -19,8 +19,14 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    password:{
+    senha:{
         type: String,
         required: true
+    },
+    criado_em:{
+        type: Date,
+        default: new Date()
     }
 })
+
+module.exports = mongoose.model("User", UserSchema)
